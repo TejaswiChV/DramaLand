@@ -24,3 +24,5 @@
   12 git push
   
   13 git push origin main
+
+  14 Inorder to apply bootstrap css classes include in main.jsx -> import 'bootstrap/dist/css/bootstrap.min.css'
