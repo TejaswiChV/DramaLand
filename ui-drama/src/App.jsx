@@ -4,12 +4,21 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import HeaderComponent from './components/HeaderComponent'
 import FooterComponent from './components/FooterComponent'
+import Countries from './components/Countries'
+import { BrowserRouter , Routes , Route} from "react-router-dom"
+import Dramas from './components/Dramas'
 
 function App() {
   return (
     <>
+    <BrowserRouter>
     <HeaderComponent></HeaderComponent>
     <FooterComponent></FooterComponent>
+    <Routes>
+      <Route path="/" element={<Countries />}></Route>
+      <Route path="/dramas" element={<Dramas />}></Route>
+    </Routes>
+    </BrowserRouter>
     </>
   )
 }
