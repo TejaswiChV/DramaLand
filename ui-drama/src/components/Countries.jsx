@@ -6,8 +6,8 @@ const Countries = () => {
     const [ selectedOption, setSelectedOption ] = useState("");
     const [ countries , setCountries ] = useState([]);
     const navigator = useNavigate()
-    function naviagteToDramas(){
-        navigator("/dramas")
+    function naviagteToDramas(id){
+        navigator(`/dramas/${id}`)
     }
     async function getCountryData(){
       let countryData = await getCountries();
@@ -28,10 +28,10 @@ const Countries = () => {
         <div className="dropdown-menu w-75" aria-labelledby="dropdownMenuButton">
         { countries.map((country)=>{
           return(
-          <a className="dropdown-item" key={country.id} style={{"textAlign":"center"}} href="#" onClick={() => {setSelectedOption('India');naviagteToDramas()}}>{country.name}</a>
+          <a className="dropdown-item" key={country.id} style={{"textAlign":"center"}} href="#" onClick={() => {setSelectedOption(country.name);naviagteToDramas(country.id)}}>{country.name}</a>
           )
         })}
-             </div>
+        </div>
       </div>
     </div>
  

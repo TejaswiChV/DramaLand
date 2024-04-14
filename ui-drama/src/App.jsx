@@ -17,7 +17,7 @@ function App() {
     <div >
     <Routes>
       <Route path="/" element={<Countries />}></Route>
-      <Route path="/dramas" element={<Dramas />}></Route>
+      <Route path="/dramas/:id" element={<Dramas />}></Route>
     </Routes>
     </div>
     </BrowserRouter>
