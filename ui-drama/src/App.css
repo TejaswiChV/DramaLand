@@ -7,3 +7,11 @@
     text-align: center;
     color:white
   }
+  .bg-image {
+    background-image: url('https://i.pinimg.com/736x/ea/90/c6/ea90c69865a5e8d0ac67c9ae109d4f83.jpg');
+    background-size: cover;
+    background-position: center;
+    height:85vh;
+    max-width:100% !important;
+    /* overflow-y: hidden; */
+  }

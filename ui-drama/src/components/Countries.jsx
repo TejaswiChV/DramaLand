@@ -9,8 +9,8 @@ const Countries = () => {
     }
 
   return (
-    <div className="container" style={{"marginTop":"40px","textAlign":"center"}}>
-      <div className="dropdown">
+    <div className="container bg-image">
+      <div className="dropdown" style={{"paddingTop":"40px","textAlign":"center"}}>
         <button className="btn btn-secondary dropdown-toggle w-75" type="button" id="dropdownMenuButton"  aria-haspopup="true" data-bs-toggle="dropdown"  aria-expanded="false">
         {selectedOption ? selectedOption : 'Country'}
         </button>
@@ -21,6 +21,7 @@ const Countries = () => {
         </div>
       </div>
     </div>
+ 
   )
 }
 

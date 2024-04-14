@@ -14,10 +14,12 @@ function App() {
     <BrowserRouter>
     <HeaderComponent></HeaderComponent>
     <FooterComponent></FooterComponent>
+    <div >
     <Routes>
       <Route path="/" element={<Countries />}></Route>
       <Route path="/dramas" element={<Dramas />}></Route>
     </Routes>
+    </div>
     </BrowserRouter>
     </>
   )
