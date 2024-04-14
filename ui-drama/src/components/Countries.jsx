@@ -1,13 +1,24 @@
-import React, { useState } from 'react'
-import {useNavigate , useParams} from "react-router-dom"
+import { useParams , useNavigate} from "react-router-dom"
+import {useState , useEffect} from "react"
+import { getCountries } from "../api/countries";
 
 const Countries = () => {
     const [ selectedOption, setSelectedOption ] = useState("");
+    const [ countries , setCountries ] = useState([]);
     const navigator = useNavigate()
     function naviagteToDramas(){
         navigator("/dramas")
     }
-
+    async function getCountryData(){
+      let countryData = await getCountries();
+      setCountries(countryData);
+    }
+    useEffect(()=>{
+       getCountryData();
+    },[])
+    // useEffect(() => {
+    //   console.log('countries is', countries);
+    // }, [countries]);
   return (
     <div className="container bg-image">
       <div className="dropdown" style={{"paddingTop":"40px","textAlign":"center"}}>
@@ -15,10 +26,12 @@ const Countries = () => {
         {selectedOption ? selectedOption : 'Country'}
         </button>
         <div className="dropdown-menu w-75" aria-labelledby="dropdownMenuButton">
-          <a className="dropdown-item" style={{"textAlign":"center"}} href="#" onClick={() => {setSelectedOption('China');naviagteToDramas()}}>China</a>
-          <a className="dropdown-item" style={{"textAlign":"center"}} href="#" onClick={() => {setSelectedOption('Korea');naviagteToDramas()}}>Korea</a>
-          <a className="dropdown-item" style={{"textAlign":"center"}} href="#" onClick={() => {setSelectedOption('India');naviagteToDramas()}}>India</a>
-        </div>
+        { countries.map((country)=>{
+          return(
+          <a className="dropdown-item" key={country.id} style={{"textAlign":"center"}} href="#" onClick={() => {setSelectedOption('India');naviagteToDramas()}}>{country.name}</a>
+          )
+        })}
+             </div>
       </div>
     </div>
  
